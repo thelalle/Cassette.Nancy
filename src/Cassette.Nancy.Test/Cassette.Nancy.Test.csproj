@@ -31,18 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxMin, Version=4.67.4639.17277, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AjaxMin.4.67.4639.17289\lib\net40\AjaxMin.dll</HintPath>
-    </Reference>
     <Reference Include="CsQuery">
       <HintPath>..\packages\CsQuery.1.2.1\lib\net40\CsQuery.dll</HintPath>
-    </Reference>
-    <Reference Include="Jurassic">
-      <HintPath>..\packages\Jurassic.2.1.1\lib\Jurassic.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -94,16 +84,25 @@
     <None Include="Views\RazorHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\dependencies\cassette\src\Cassette.CoffeeScript\Cassette.CoffeeScript.csproj">
-      <Project>{C9A552DA-83EB-4479-BAB6-C40B6091E3D4}</Project>
-      <Name>Cassette.CoffeeScript</Name>
-    </ProjectReference>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\app\layout.coffee" />
+    <Content Include="Scripts\lib\bundle.txt" />
+    <Content Include="Scripts\lib\jquery-1.7.js" />
+    <Content Include="Scripts\lib\underscore.js" />
+    <Content Include="Styles\Main.sass" />
+    <Content Include="Styles\images\lorry.png" />
+    <Content Include="Styles\Main.css" />
+    <Content Include="Styles\Main.scss" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\dependencies\cassette\src\Cassette\Cassette.csproj">
       <Project>{A5CCF9D3-5D49-4BFC-B9A6-9EC9E0E29C50}</Project>
       <Name>Cassette</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy.Testing\Nancy.Testing.csproj">
-      <Project>{D79203C0-B672-4751-9C95-C3AB7D3FEFBE}</Project>
+      <Project>{d79203c0-b672-4751-9c95-c3ab7d3fefbe}</Project>
       <Name>Nancy.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy.ViewEngines.Razor\Nancy.ViewEngines.Razor.csproj">
@@ -118,19 +117,6 @@
       <Project>{7514833D-27E3-42B1-9BF7-CAE8CBAB0446}</Project>
       <Name>Cassette.Nancy</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\app\layout.coffee" />
-    <Content Include="Scripts\lib\bundle.txt" />
-    <Content Include="Scripts\lib\jquery-1.7.js" />
-    <Content Include="Scripts\lib\underscore.js" />
-    <Content Include="Styles\Main.sass" />
-    <Content Include="Styles\images\lorry.png" />
-    <Content Include="Styles\Main.css" />
-    <Content Include="Styles\Main.scss" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

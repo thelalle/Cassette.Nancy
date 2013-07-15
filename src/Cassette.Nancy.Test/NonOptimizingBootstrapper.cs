@@ -2,6 +2,7 @@
 using Nancy;
 using Nancy.Conventions;
 using Nancy.Testing.Fakes;
+using Nancy.TinyIoc;
 
 namespace Cassette.Nancy.Test
 {
@@ -12,7 +13,7 @@ namespace Cassette.Nancy.Test
       CassetteNancyStartup.OptimizeOutput = false;
     }
 
-    protected override void ConfigureApplicationContainer(global::TinyIoC.TinyIoCContainer container)
+    protected override void ConfigureApplicationContainer(TinyIoCContainer container)
     {
       base.ConfigureApplicationContainer(container);
 
