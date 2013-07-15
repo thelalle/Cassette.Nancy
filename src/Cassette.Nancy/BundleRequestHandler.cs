@@ -21,7 +21,8 @@ namespace Cassette.Nancy
 
     public Response ProcessRequest(NancyContext context, string path)
     {
-      path = string.Concat("~", path.Substring(path.LastIndexOf('=') + 1));
+      var indexOfOccurence = IndexOfOccurence(path, "/", 2);
+      path = path.Substring(indexOfOccurence);
 
       using (bundles.GetReadLock())
       {
@@ -63,6 +64,22 @@ namespace Cassette.Nancy
         else
           throw new ApplicationException("Unhandled bundle type");
       }
+    }
+
+    private int IndexOfOccurence(string s, string match, int occurence)
+    {
+        int i = 1;
+        int index = 0;
+
+        while(i <= occurence && (index = s.IndexOf(match, index + 1)) != -1)
+        {
+            if(i == occurence)
+                return index;
+
+            i++;
+        }
+
+        return -1;
     }
   }
 }
