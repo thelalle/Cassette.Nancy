@@ -1,5 +1,6 @@
 ﻿using Nancy;
 using Nancy.Conventions;
+using Nancy.TinyIoc;
 
 namespace Cassette.Nancy.Demo.TinyIoC {
     public class Bootstrapper : DefaultNancyBootstrapper {
@@ -7,7 +8,7 @@ namespace Cassette.Nancy.Demo.TinyIoC {
             CassetteNancyStartup.OptimizeOutput = false;
         }
 
-        protected override void ApplicationStartup(global::TinyIoC.TinyIoCContainer container, global::Nancy.Bootstrapper.IPipelines pipelines) {
+        protected override void ApplicationStartup(TinyIoCContainer container, global::Nancy.Bootstrapper.IPipelines pipelines) {
             base.ApplicationStartup(container, pipelines);
 
             Conventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("Images"));
