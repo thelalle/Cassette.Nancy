@@ -4,3 +4,6 @@
 [submodule "dependencies/Nancy"]
 	path = dependencies/Nancy
 	url = https://github.com/NancyFx/Nancy.git
+[submodule "dependencies/Nancy.Bootstrappers.Autofac"]
+	path = dependencies/Nancy.Bootstrappers.Autofac
+	url = https://github.com/NancyFx/Nancy.Bootstrappers.Autofac.git
